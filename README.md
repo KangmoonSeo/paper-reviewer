@@ -1,2 +1,7 @@
 # paper-reviewer
-paper-review service using Llamaindex, ChatGPT
+Paper-Reviewer Web Service using `Llamaindex` `ChatGPT`
+
+## quick start
+```sh
+sh start.sh
+```
