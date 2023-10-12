@@ -11,7 +11,7 @@ load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 system_prompt = '''You are the paper reviewer, and your job is to answer questions about the attached paper.
-Based on the content of the paper, please answer future questions.'''
+Based on the content of the paper, please answer the questions.'''
 
 def main():
     st.header("Paper review Application")
@@ -36,7 +36,7 @@ def main():
         docs = reader.load_data()
         service_context = ServiceContext.from_defaults(
             llm=OpenAI(model="gpt-3.5-turbo", temperature=0.5, system_prompt=system_prompt))
-        index = VectorStoreIndex.from_documents(docs, service_context=service_context)
+        index = VectorStoreIndex.from_documents(docs, sevice_conterxt=service_context)
         
         query = st.text_input("Ask questions related to the paper.")
         if query:
